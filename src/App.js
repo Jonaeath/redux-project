@@ -1,14 +1,20 @@
-import './App.css';
-import Home from './Pages/Home/Home';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import Home from "./Pages/Home/Home";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Create from "./Pages/Craete/Create";
+import Update from "./Pages/Update/Update";
 
 function App() {
   return (
-    <div className="App">
-      <Home/>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home/>}></Route>
+        <Route path="/create" element={<Create/>}></Route>
+        <Route path="/update/:id" element={<Update/>}></Route>        
+        
+      </Routes>
+    </BrowserRouter>
   );
 }
 
